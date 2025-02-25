@@ -1,0 +1,13 @@
+# Environment files
+.env
+*.env
+.env.*
+!.env.example
+
+# n8n backup data
+n8n/backup/*
+!n8n/backup/.gitkeep
+
+# Other common files to ignore
+.DS_Store
+node_modules/ 
