@@ -1,11 +1,14 @@
 
 # self-hosted-ai-starter-kit-with-nginx-for-ngrok
 - This is a fork from [github self-hosted-ai-starter-kit](https://github.com/n8n-io/self-hosted-ai-starter-kit) that includes nginx reverse proxy to include ngrok host to use to show and connect your local n8n proyects to the world
-- This confg available to connect your local n8n with external API like telegram, drive, etc.
+- This config available to connect your local n8n with external API like Telegram, Google Drive, etc.
 
 ## Ngrok Fee Proxy Helper
-- Get a free stable subdomain: [ngrok-dashboard-domains](https://dashboard.ngrok.com/domains)
+- Get a free static subdomain: [free-static-domains-ngrok-users](https://ngrok.com/blog-post/free-static-domains-ngrok-users)
+- Ngrok Domains Dashboard: [ngrok-dashboard-domains](https://dashboard.ngrok.com/domains)
 - Inspect: [ngrok-default-inspect](http://localhost:4040)
+
+-----------------------------------------------------------------
 
 # Self-hosted AI starter kit
 
