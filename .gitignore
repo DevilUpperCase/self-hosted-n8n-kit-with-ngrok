@@ -11,3 +11,7 @@ n8n/backup/*
 # Other common files to ignore
 .DS_Store
 node_modules/ 
+
+# Key files to ignore
+**/ssl/
+ngrok.yml
