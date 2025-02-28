@@ -19,6 +19,7 @@ x-n8n: &service-n8n
     - N8N_PERSONALIZATION_ENABLED=false
     - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
     - N8N_USER_MANAGEMENT_JWT_SECRET=${N8N_USER_MANAGEMENT_JWT_SECRET}
+    - OLLAMA_VOLUME=${OLLAMA_VOLUME}
     - OLLAMA_HOST=ollama:11434
     - N8N_PROTOCOL=${N8N_PROTOCOL}
     - N8N_HOST=${N8N_HOST}
@@ -32,14 +33,14 @@ x-ollama: &service-ollama
   ports:
     - "11434:11434"
   volumes:
-    - C:/Users/David/.ollama:/root/.ollama
+    - OLLAMA_VOLUME:/root/.ollama
 
 x-init-ollama: &init-ollama
   image: ollama/ollama:latest
   networks: ['demo']
   container_name: ollama-pull-llama
   volumes:
-    - C:/Users/David/.ollama:/root/.ollama
+    - OLLAMA_VOLUME:/root/.ollama
   entrypoint: /bin/sh
   environment:
     - OLLAMA_HOST=ollama:11434
@@ -123,16 +124,16 @@ services:
       - qdrant_storage:/qdrant/storage
 
   ngrok:
-      image: ngrok/ngrok:latest
-      container_name: ngrok
-      command: ["start", "--all", "--config", "/etc/ngrok.yml"]
-      volumes:
-        - ./ngrok.yml:/etc/ngrok.yml
-      networks:
-        - demo
-      restart: unless-stopped
-      ports:
-        - 4040:4040
+    image: ngrok/ngrok:latest
+    container_name: ngrok
+    command: ["start", "--all", "--config", "/etc/ngrok.yml"]
+    volumes:
+      - ./ngrok.yml:/etc/ngrok.yml
+    networks:
+      - demo
+    restart: unless-stopped
+    ports:
+      - 4040:4040
   ollama-cpu:
     profiles: ["cpu"]
     <<: *service-ollama
