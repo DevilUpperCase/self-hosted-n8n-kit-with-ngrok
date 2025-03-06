@@ -1,5 +1,5 @@
-# self-hosted-ai-starter-kit-with-nginx-for-ngrok
-- This is a fork from [github self-hosted-ai-starter-kit](https://github.com/n8n-io/self-hosted-ai-starter-kit) that includes nginx reverse proxy to include ngrok host to use to show and connect your local n8n proyects to the world
+# self-hosted-ai-starter-kit-with-ngrok
+- This is a fork from [github self-hosted-ai-starter-kit](https://github.com/n8n-io/self-hosted-ai-starter-kit) to include Ngrok tunnel to show and connect your local n8n proyects to the world
 - This config available to connect your local n8n with external API like Telegram, Google Drive, etc.
 
 ## Quick Setup Steps 🏃‍➡️
