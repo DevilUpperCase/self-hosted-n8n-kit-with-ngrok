@@ -27,7 +27,6 @@ x-n8n: &service-n8n
 
 x-ollama: &service-ollama
   image: ollama/ollama:latest
-  container_name: ollama
   networks: ['demo']
   restart: unless-stopped
   ports:
@@ -38,7 +37,6 @@ x-ollama: &service-ollama
 x-init-ollama: &init-ollama
   image: ollama/ollama:latest
   networks: ['demo']
-  container_name: ollama-pull-llama
   volumes:
     - OLLAMA_VOLUME:/root/.ollama
   entrypoint: /bin/sh
@@ -49,21 +47,6 @@ x-init-ollama: &init-ollama
     - "sleep 3; ollama pull llama3.2"
 
 services:
-  nginx:
-    image: nginx:stable-alpine
-    container_name: nginx
-    ports:
-      - "80:80"
-      - "88:88"
-      - "443:443"
-      - "8443:8443"
-    volumes:
-      - ./nginx:/etc/nginx/conf.d/
-      # (Optionally, mount your SSL certs if not baked into the image)
-      #- ./ssl:/etc/nginx/ssl/
-    networks:
-      - demo
-
   postgres:
     image: postgres:16-alpine
     hostname: postgres
@@ -84,7 +67,6 @@ services:
   n8n-import:
     <<: *service-n8n
     hostname: n8n-import
-    container_name: n8n-import
     entrypoint: /bin/sh
     command:
       - "-c"
@@ -98,7 +80,6 @@ services:
   n8n:
     <<: *service-n8n
     hostname: n8n
-    container_name: n8n
     restart: unless-stopped
     ports:
       - "5678:5678"
@@ -115,7 +96,6 @@ services:
   qdrant:
     image: qdrant/qdrant
     hostname: qdrant
-    container_name: qdrant
     networks: ['demo']
     restart: unless-stopped
     ports:
@@ -125,12 +105,11 @@ services:
 
   ngrok:
     image: ngrok/ngrok:latest
-    container_name: ngrok
+    hostname: ngrok
     command: ["start", "--all", "--config", "/etc/ngrok.yml"]
     volumes:
       - ./ngrok.yml:/etc/ngrok.yml
-    networks:
-      - demo
+    networks: ['demo']
     restart: unless-stopped
     ports:
       - 4040:4040

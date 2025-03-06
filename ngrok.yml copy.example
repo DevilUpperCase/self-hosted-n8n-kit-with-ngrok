@@ -1,0 +1,6 @@
+authtoken: your-ngrok-authtoken <!--- # via ngrok website https://ngrok.com/docs/guides/developer-preview/getting-started/  -->
+tunnels:
+  custom-domain-tunnel:
+    proto: http
+    addr: n8n:5678  <!---  n8n default port localhost:5678 -->
+    hostname: your-ngrok-domain.ngrok-free.app
