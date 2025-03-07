@@ -5,10 +5,10 @@
 
 ## Quick Setup Steps 🏃‍➡️
 
-### 1. Clone the repository (you can change 'my-n8n-project' to your preferred name):
+### 1. Clone the repository (you can change 'self-hosted-n8n-kit-with-ngrok' to your preferred name):
 ```bash
-git clone https://github.com/DevilUpperCase/self-hosted-ai-starter-kit-with-ngrok.git self-hosted-ai-starter-kit-with-ngrok
-cd self-hosted-ai-starter-kit-with-ngrok
+git clone https://github.com/DevilUpperCase/self-hosted-n8n-kit-with-ngrok.git self-hosted-n8n-kit-with-ngrok
+cd self-hosted-n8n-kit-with-ngrok
 ```
 
 ### 2. Set up your environment:
