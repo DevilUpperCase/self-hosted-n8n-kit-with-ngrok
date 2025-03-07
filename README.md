@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# self-hosted-ai-starter-kit-with-ngrok
+# self-hosted-n8n-kit-with-ngrok
 - This is a fork from [github self-hosted-ai-starter-kit](https://github.com/n8n-io/self-hosted-ai-starter-kit) to include Ngrok tunnel to show and connect your local n8n proyects to the world
 - This config available to connect your local n8n with external API like Telegram, Google Drive, etc.
 
