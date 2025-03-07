@@ -113,6 +113,7 @@ services:
     restart: unless-stopped
     ports:
       - 4040:4040
+
   ollama-cpu:
     profiles: ["cpu"]
     <<: *service-ollama
